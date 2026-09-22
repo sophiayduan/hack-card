@@ -8,14 +8,14 @@
   import * as THREE from 'three'
 
   const models = [
-    'models/card-example.glb',
-    'models/card-example-2.glb',
-    'models/card-example-3.glb',
-    'models/card-example-4.glb',
+    'models/rudy_bcard.glb',
+    // 'models/card-example-2.glb',
+    // 'models/card-example-3.glb',
+    // 'models/card-example-4.glb',
   ]
 
   let currentCard = $state(0)
-  const scale = new Spring(0.018)
+  const scale = new Spring(0.17)
   const { onPointerEnter, onPointerLeave } = useCursor()
 
   let gltf = $derived(useGltf(models[currentCard]))
@@ -29,6 +29,25 @@
   }
 
   interactivity()
+  $effect(() => {
+    if ($gltf) {
+      $gltf.scene.traverse((child) => {
+        if (child instanceof THREE.Mesh && child.material) {
+          const mats = Array.isArray(child.material) ? child.material : [child.material]
+          mats.forEach((mat) => {
+            if (mat instanceof THREE.MeshStandardMaterial && mat.name) {
+              const match = mat.name.match(/Opaque\((\d+),(\d+),(\d+)\)/)
+              if (match) {
+                const [, r, g, b] = match.map(Number)
+                mat.color.setRGB(r / 255, g / 255, b / 255)
+              }
+            }
+          })
+        }
+      })
+    }
+  })
+
 </script>
 
 
@@ -47,7 +66,7 @@
         enableDamping
         enableZoom={false}
         maxPolarAngle={1.4}
-        minPolarAngle={1.6}
+        minPolarAngle={1.4}
     />
     </T.PerspectiveCamera>
     <T.DirectionalLight position={[5, 10, 3]} intensity={1}/>
@@ -62,13 +81,16 @@
             }}
             onpointerenter={() => {
             onPointerEnter()
-            scale.target = 0.019
+            // scale.target = 0.019
+            scale.target = 0.17
             }}
             onpointerleave={() => {
             onPointerLeave()
-            scale.target = 0.018
+            // scale.target = 0.018
+            scale.target = 0.17
+
             }}
-            rotation={[1, -0.0, 1]}
+            rotation={[1, -3.2, 2.6]}
             position={[0, -0.05, 0]}
 
         />

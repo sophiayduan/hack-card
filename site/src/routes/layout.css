@@ -24,15 +24,22 @@
 @theme {
     --color-red: #E7484C;
     --color-green: #E3DB4D;
-    --color-beige: #EBECE7;
+    --color-beige: #ECE9E7;
     --color-blue: #1447E6;
-    --color-brown: #202427;
+    --color-brown: #242323;
     --color-gray:#ABA4A4;
-    --color-dark-gray: #5E5858;
+    --color-dark-gray: #464141;
+    /*--color-gray: #A5A4AB;
+    --color-dark-gray: #59585E;*/
     --color-white:#FCF7F7;
     --font-bebas: 'Bebas Neue';
     --font-mono: 'IBM Plex Mono';
     --font-lato: 'Lato';
+    --ease-spring: linear(
+        0, 0.2 6%, 0.7 16%, 1.08 28%, 1.12 34%, 1.08 40%,
+        1.0 48%, 0.96 55%, 0.978 63%, 1.01 71%,
+        1.004 78%, 0.999 85%, 1
+      );
 
 }
 

@@ -9,4 +9,5 @@
     <link rel="icon" href={favicon} />
     <!-- <title>Hack Card 2026</title> -->
 </svelte:head>
+
 {@render children()}

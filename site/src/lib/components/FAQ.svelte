@@ -55,7 +55,7 @@
        <div></div>
        <div class="w-full">
            {#each items as item, index}
-           <div class="w-full py-2 xl:py-4 text-lg xl:text-xl leading-tight font-semibold px-4 border-b border-brown font-mono flex flex-col transition-all duration-300">
+           <div class="w-full py-2 text-lg xl:text-xl leading-tight font-semibold px-4 border-b border-brown font-mono flex flex-col transition-all duration-300">
                <button onclick={() => toggle(index)} class="flex items-center xl:justify-between cursor-pointer">
                    <span class="text-left py-2 xl:py-4 w-fit">{item.question}</span>
                    <svg
@@ -71,7 +71,7 @@
                    </svg>
                </button>
                <div bind:this={answers[index]} class="overflow-hidden h-0">
-                   <span class=" text-gray leading-snug text-base transition-all py-2">{item.answer}</span>
+                   <span class=" text-dark-gray leading-snug text-base transition-all py-2">{item.answer}</span>
                </div>
            </div>
            {/each}

@@ -1,4 +1,4 @@
-<footer class="bg-brown flex items-end justify-between gap-10 p-6 pb-10 xl:px-14 ">
+<footer class="bg-brown z-40 flex items-end justify-between gap-10 p-6 pb-10 xl:px-14 ">
     <div class="space-y-6">
         <form class="form  transition-all border-b  border-gray w-fit pointer-events-auto shadow-xs">
             <div class="h-8 min-w-60 lg:min-w-120 rounded-sm flex ">
