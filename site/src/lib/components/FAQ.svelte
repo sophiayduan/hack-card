@@ -71,7 +71,7 @@
                    </svg>
                </button>
                <div bind:this={answers[index]} class="overflow-hidden h-0">
-                   <span class=" text-dark-gray leading-snug text-base transition-all py-2">{item.answer}</span>
+                   <span class=" text-dark-gray/70 leading-snug text-base transition-all py-2">{item.answer}</span>
                </div>
            </div>
            {/each}

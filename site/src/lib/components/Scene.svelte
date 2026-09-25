@@ -8,14 +8,14 @@
   import * as THREE from 'three'
 
   const models = [
-    'models/rudy_bcard.glb',
-    // 'models/card-example-2.glb',
+    // 'models/rudy_bcard.glb',
+    'models/card-example-2.glb',
     // 'models/card-example-3.glb',
     // 'models/card-example-4.glb',
   ]
 
   let currentCard = $state(0)
-  const scale = new Spring(0.17)
+  const scale = new Spring(0.015)
   const { onPointerEnter, onPointerLeave } = useCursor()
 
   let gltf = $derived(useGltf(models[currentCard]))
@@ -65,8 +65,8 @@
         autoRotateSpeed={1.5}
         enableDamping
         enableZoom={false}
-        maxPolarAngle={1.4}
-        minPolarAngle={1.4}
+        maxPolarAngle={1.5}
+        minPolarAngle={1.5}
     />
     </T.PerspectiveCamera>
     <T.DirectionalLight position={[5, 10, 3]} intensity={1}/>
@@ -81,16 +81,16 @@
             }}
             onpointerenter={() => {
             onPointerEnter()
-            // scale.target = 0.019
-            scale.target = 0.17
+            scale.target = 0.0150
+            // scale.target = 0.17
             }}
             onpointerleave={() => {
             onPointerLeave()
-            // scale.target = 0.018
-            scale.target = 0.17
+            scale.target = 0.0150
+            // scale.target = 0.17
 
             }}
-            rotation={[1, -3.2, 2.6]}
+            rotation={[1, -3, 2.1]}
             position={[0, -0.05, 0]}
 
         />

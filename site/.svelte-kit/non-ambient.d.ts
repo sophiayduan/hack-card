@@ -40,6 +40,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/" | "/custom" | "/test";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/hackclubbers.png" | "/models/card-example-2.glb" | "/models/card-example-3.glb" | "/models/card-example-4.glb" | "/models/card-example.glb" | "/models/rudy_bcard.glb" | "/robots.txt" | "/sophia.png" | string & {};
+		Asset(): "/arrow.svg" | "/hackclubbers.png" | "/models/card-example-2.glb" | "/models/card-example-3.glb" | "/models/card-example-4.glb" | "/models/card-example.glb" | "/models/rudy_bcard.glb" | "/robots.txt" | "/sophia.png" | string & {};
 	}
 }

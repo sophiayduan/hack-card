@@ -1,6 +1,13 @@
 @import 'tailwindcss';
 
 @font-face {
+    font-family: 'Dirtyline';
+    src: url('$lib/fonts/Dirtyline.otf') format('opentype');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Bebas Neue';
     src: url('$lib/fonts/BebasNeue-Regular.ttf') format('truetype');
     font-style: normal;
@@ -32,6 +39,7 @@
     /*--color-gray: #A5A4AB;
     --color-dark-gray: #59585E;*/
     --color-white:#FCF7F7;
+    --font-dirty: 'Dirtyline';
     --font-bebas: 'Bebas Neue';
     --font-mono: 'IBM Plex Mono';
     --font-lato: 'Lato';
@@ -40,9 +48,15 @@
         1.0 48%, 0.96 55%, 0.978 63%, 1.01 71%,
         1.004 78%, 0.999 85%, 1
       );
+    /*https://cubic-bezier.com/#0,.87,.22,1.07*/
+    --ease-hover: cubic-bezier(0,.87,.22,1.07);
 
 }
 
+
 html {
-    @apply bg-beige font-lato
+    @apply bg-beige font-lato;
+    scrollbar-color: rgba(70, 65, 65, 0.5) transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable both-edges;
 }
