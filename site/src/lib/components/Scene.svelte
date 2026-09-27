@@ -10,8 +10,8 @@
   const models = [
     // 'models/rudy_bcard.glb',
     'models/card-example-2.glb',
-    // 'models/card-example-3.glb',
-    // 'models/card-example-4.glb',
+    'models/card-example-3.glb',
+    'models/card-example-4.glb',
   ]
 
   let currentCard = $state(0)

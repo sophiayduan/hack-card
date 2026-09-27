@@ -33,22 +33,37 @@
     const faqInfo = [
       {
         id: 1,
-        question: "Lorem blah blah blahahsdfjlksdlkjf?",
+        question: "Is this really free? What's the catch?",
         answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
       },
       {
         id: 2,
-        question: "Lorem blah blah blahahsdfjlksdlkjf?",
+        question: "Who is this for?",
         answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
       },
       {
         id: 3,
-        question: "Lorem blah blah blahahsdfjlksdlkjf?",
+        question: "Can I follow a tutorial?",
         answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
       },
       {
         id: 4,
-        question: "Lorem blah blah blahahsdfjlksdlkjf?",
+        question: "How long do I need to spend on my PCB?",
+        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+      },
+      {
+        id: 5,
+        question: "What if my card is bad?",
+        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+      },
+      {
+        id: 6,
+        question: "How do I start learning PCB design?",
+        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+      },
+      {
+        id: 7,
+        question: "Can I use AI?",
         answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
       },
     ];
@@ -56,22 +71,22 @@
     const faqGeneral = [
       {
         id: 1,
-        question: "Lorem blah blah blahahsdfjlksdlkjf?",
+        question: "What is Hack Club?",
         answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
       },
       {
         id: 2,
-        question: "Lorem blah blah blahahsdfjlksdlkjf?",
+        question: "Do I need a Hack Club Account?",
         answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
       },
       {
         id: 3,
-        question: "Lorem blah blah blahahsdfjlksdlkjf?",
+        question: "Is this 'double dippable'?",
         answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
       },
       {
         id: 4,
-        question: "Lorem blah blah blahahsdfjlksdlkjf?",
+        question: "Do I need to track my time with Hackatime?",
         answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
       },
     ];
@@ -153,7 +168,7 @@
         })
 
         tween = gsap.from('.parallax', {
-          yPercent: 10,
+          yPercent: 20,
           ease: 'none',
           scrollTrigger: {
             trigger: '.trig',
@@ -198,6 +213,17 @@
           }
         })
 
+        gsap.to('.banner', {
+          x:120,
+          scrollTrigger: {
+            trigger: "#banner",
+            start: 'center bottom',
+            end:'+=600',
+            scrub:1,
+            // markers: true,
+          }
+        })
+
 
     });
     onDestroy(() => {
@@ -208,10 +234,10 @@
 </script>
 
 
-<div class="fixed inset-0 bg-[url('../lib/assets/noise.gif')] opacity-12 pointer-events-none"></div>
+<!-- <div class="fixed inset-0 bg-[url('../lib/assets/noise.gif')] opacity-12 pointer-events-none"></div> -->
 
 <section id="hero" class="w-screen min-h-screen xl:h-screen px-6 py-10 bg-beige xl:p-14 grid grid-cols-1 grid-rows-1 bg-local overflow-hidden place-items-center">
-    <!-- <div class="z-100 fixed top-1/2 -translate-y-1/2 right-0 w-12 h-40 hover:w-14 mix-blend-multiply"
+    <div class="z-100 absolute top-1/2 -translate-y-1/2 right-0 w-12 h-40 hover:w-14 mix-blend-multiply"
 >
         <a href="/custom" target="" class="nudge absolute inset-0 duration-300 bg-red text-red rounded-l-xs"
             onmouseenter={() => nudge?.pause()}
@@ -221,7 +247,7 @@
 
             s
         </a>
-    </div> -->
+    </div>
 
     <div class="col-start-1 row-start-1 grid grid-cols-1 grid-rows-1 h-180 w-180 xl:h-full xl:w-auto aspect-square ml-auto xl:pr-20 place-items-center z-100">
         <div class="col-start-1 row-start-1 relative h-full w-full pointer-events-none pb-20">
@@ -230,9 +256,9 @@
             </Canvas> -->
         </div>
         <div class="col-start-1 row-start-1 relative h-full w-[80%] z-0 mt-10">
-            <Canvas>
+            <!-- <Canvas>
                 <Scene />
-            </Canvas>
+            </Canvas> -->
         </div>
 
         <div class="col-start-1 row-start-1 w-full h-full flex items-center justify-center font-mono font-bold ">
@@ -276,7 +302,7 @@
         </div>
     </div>
 
-    <div class="absolute z-100 top-2 text-sm lg:text-sm xl:top-4 left-0 px-6 xl:px-14 w-full h-fit flex font-mono text-brown font-light gap-28 mix-blend-multiply pointer-events-none">
+    <div class="absolute z-100 top-2 text-sm xl:top-4 left-0 px-6 xl:px-14 w-full h-fit flex font-mono text-brown font-light gap-28 mix-blend-multiply pointer-events-none">
         <span>A HACKCLUB EVENT</span>
         <div class="flex ml-auto gap-2 w-fit">
             <!-- <div id="cube-scene" class="w-100 h-100">
@@ -296,18 +322,47 @@
         </div>
         <span class="text-right">BY SOPHIA DUAN<br /> & FRIENDS</span>
     </div>
-    <div class="fixed bottom-2 text-sm lg:text-base xl:bottom-4 left-0 px-8 xl:px-16 w-full h-fit font-mono text-brown font-light ml-auto gap-14 flex justify-between mix-blend-multiply pointer-events-none items-end">
+    <div class="fixed bottom-2 text-sm lg:text-base xl:bottom-4 left-0 px-8 xl:px-16 w-full h-fit font-mono text-brown font-light ml-auto gap-14 mix-blend-multiply pointer-events-none grid grid-cols-3">
         <div></div>
-        <span id="coords">X 0000 | Y 0000</span>
-        <div class="flex flex-col items-end gap-2">
+        <span id="coords" class="place-self-center">X 0000 | Y 0000 </span>
+        <div class="flex flex-col items-end gap-2 place-self-end">
             <!-- <img src="/logo.svg" alt="" class="mix-blend-multiply opacity-60 h-10" /> -->
             <span>&copy; 2026</span>
         </div>
     </div>
 
 </section>
-<section class="bg-beige min-h-200 w-screen p-6 xl:px-14 py-20 flex flex-col gap-4">
+<section class="bg-beige min-h-200 w-screen p-6 xl:px-14 py-20 flex flex-col">
+    <h3 class="text-[1.8rem] xl:text-[2rem] font-semibold pb-6">Welcome to Canada's biggest hackathon</h3>
+    <div class="flex justify-between items-start grow gap-20">
+        <div class="max-w-2xl">
+            <p class="font-mono text-lg">This September, join 1,000+ hackers from around the world and build with people who think differently. Learn from world-class mentors, connect with the community, and turn ideas into something real. 13 years in, Hack the North continues to bring hands-on workshops, unforgettable experiences, and real connections with the companies shaping what's next in tech.</p>
+            <br />
+            <br />
+            <p class="mt-auto font-mono text-lg">Not from Waterloo? We cover food, help with travel expenses, and provide lodging so you can focus on turning your dreams into reality.</p>
+        </div>
+        <div class="h-full min-h-80 min-w-140 bg-gray rounded-xs border border-brown flex flex-col justify-between items-center">
+            <span class="-translate-y-1/2">|</span>
+            <div class="w-full flex justify-between items-start">
+                <span class="-translate-x-1/2 rotate-90">|</span>
+                <span class="translate-x-1/2 rotate-90">|</span>
+            </div>
 
+            <span class="translate-y-1/2">|</span>
+        </div>
+
+    </div>
+    <div class="w-full flex justify-end mt-14">
+        <div class="h-fit p-3">
+          <ol class="font-mono text-base lg:text-lg leading-tight min-w-100 whitespace-nowrap">
+              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-1">01 OVERALL PICK</li>
+              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-1">02 BEST BEGINNER PCB</li>
+              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-1">03 MOST ARTISTIC</li>
+              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full pr-4 border-b border-brown py-1">04 MOST NON-BUSINESS CARD LIKE</li>
+              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-1">05 MOST TECHNICAL</li>
+          </ol>
+        </div>
+    </div>
 </section>
 <section class="about bg-gray w-screen p-6 xl:px-14 py-20 flex flex-col">
     <h3 class="text-8xl xl:text-9xl  text-beige max-w-2xl font-bebas">
@@ -370,7 +425,7 @@
     </div>
 
 </section>
-<section id="gallery" class="bg-brown w-screen flex flex-col gap-6 py-14 xl:py-20 overflow-hidden">
+<!-- <section id="gallery" class="bg-brown w-screen flex flex-col gap-6 py-14 xl:py-20 overflow-hidden">
     <h3 class="text-[2rem] leading-9 text-beige font-medium mx-6 xl:mx-14 ">Insert COPY HERE A printed circuit board design <br/> competition with prizes for teens <br/> of <span class="underline text-blue-700 font-medium whitespace-nowrap">all skill levels</span>competition with prizes for teens.</h3>
     <a href="/" class="bg-green rounded-xs text-red font-bebas text-2xl px-2 pt-1 flex w-fit items-center gap-2 h-fit mx-6 xl:mx-14 ">
         EXPLORE THE GALLERY
@@ -378,68 +433,95 @@
     <div class="my-20 xl:my-38 space-y-5 scale-80 xl:scale-100">
         <ul class="scroll w-full flex gap-5 items-end">
             {#each examples as example}
-            <!-- <li><img src={item.src} class={item.size} alt=""/></li> -->
+            <li><img src={item.src} class={item.size} alt=""/></li>
                 <li class="aspect-3.5/2 rounded-xs bg-gray {example.children}"></li>
             {/each}
         </ul>
         <ul class="scroll2 w-full flex gap-5 items-start">
             {#each examples2 as example}
-            <!-- <li><img src={item.src} class={item.size} alt=""/></li> -->
+            <li><img src={item.src} class={item.size} alt=""/></li>
                 <li class="aspect-3.5/2 rounded-xs bg-gray {example.children}"></li>
             {/each}
         </ul>
-
     </div>
-</section>
-<section class="bg-brown p-6 py-20 w-auto flex items-center justify-center">
-    <div class="w-full h-screen rounded-xs p-4 flex items-center justify-center">
-        <div class="grid grid-cols-1 grid-rows-1 w-full h-full bg-green relative p-4 place-items-center">
-            <div class="col-start-1 row-start-1 rounded-full h-80 w-80 border-2 border-red border-dashed bg-red"></div>
-            <h2 class="col-start-1 row-start-1 text-8xl xl:text-9xl text-black font-dirty flex items-center justify-center mt-6">pRIzeS</h2>
-            <div class="col-start-1 row-start-1 relative w-full h-full">
-                <img src="arrow.svg" class="absolute top-0 left-0 w-4 h-auto rotate-180" alt="" />
-                <img src="arrow.svg" class="absolute top-0 right-0 w-4 h-auto -rotate-90" alt="" />
-
-                <img src="arrow.svg" class="absolute bottom-0 left-0 w-4 h-auto rotate-90" alt="" />
-                <img src="arrow.svg" class="absolute bottom-0 right-0 w-4 h-auto" alt="" />
+</section> -->
+<section id="awards" class="bg-brown p-4 lg:p-6 py-20 w-auto flex items-center justify-center">
+    <div class="w-full h-screen rounded-xs m-4 grid grid-cols-1 grid-rows-1 bg-green place-items-center overflow-hidden">
+        <div class="col-start-1 row-start-1 w-full h-full flex flex-col p-8">
+            <div class="">
+                <h2 class="font-dirty text-8xl xl:text-9xl text-red">awaRDs</h2>
+                <p class="max-w-lg font-mono">Each project will have it's manufacturing costs funded, starting at <span class="bg-gray/80 rounded-[1px] font-bold px-1 whitespace-nowrap">$25 and up to $125</span>. You'll also be able to <span class="bg-gray/80 rounded-[1px] font-bold px-1 whitespace-nowrap">trade your extra PCBs</span> with fellow particiapnts!</p>
+            </div>
+            <div class="mt-auto ml-auto bg-white h-fit p-3 z-10 border border-dark-gray">
+              <ol class="font-mono text-base lg:text-xl leading-tight min-w-fit whitespace-nowrap">
+                  <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-2">01 OVERALL PICK</li>
+                  <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-2">02 BEST BEGINNER PCB</li>
+                  <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-2">03 MOST ARTISTIC</li>
+                  <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full pr-4 border-b border-brown py-2">04 MOST NON-BUSINESS CARD LIKE</li>
+                  <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full py-2">05 MOST TECHNICAL</li>
+              </ol>
             </div>
         </div>
-    </div>
-</section>
-<div class="w-full h-8 bg-red">
+        <div class="col-start-1 row-start-1 w-60 h-90 lg:w-80 lg:h-120 relative">
+            <div class="absolute inset-0 bg-white rounded-sm border border-brown origin-bottom -rotate-30 -translate-x-30 shadow-xs">
+            </div>
+            <div class="absolute inset-0 bg-white rounded-sm border border-brown origin-bottom -rotate-20 -translate-x-20 shadow-xs">
+            </div>
+            <div class="absolute inset-0 bg-white rounded-sm border border-brown origin-bottom -rotate-10 -translate-x-10 shadow-xs">
+            </div>
+            <div class="absolute inset-0 bg-white rounded-sm border border-brown origin-bottom rotate-0 translate-x-0 shadow-xs">
+            </div>
+            <div class="absolute inset-0 bg-white rounded-sm border border-brown origin-bottom rotate-10 translate-x-10 shadow-xs">
+            </div>
+            <div class="absolute inset-0 bg-white rounded-sm border border-brown origin-bottom rotate-20 translate-x-20 shadow-xs">
+            </div>
+            <div class="absolute inset-0 bg-white rounded-sm border border-brown origin-bottom rotate-30 translate-x-30 shadow-xs">
+            </div>
 
+        </div>
+    </div>
+
+</section>
+<div id="banner" class="w-full h-8 bg-red flex items-center justify-center font-mono text-beige whitespace-nowrap overflow-hidden">
+    <p class="banner">FREE PROJECT FUNDING & STICKERS FOR ALL - FREE PROJECT FUNDING & STICKERS FOR ALL - FREE PROJECT FUNDING & STICKERS FOR ALL - FREE PROJECT FUNDING & STICKERS FOR ALL - FREE PROJECT FUNDING & STICKERS FOR ALL - </p>
 </div>
-<section id="faq" class="bg-beige min-h-200 w-screen p-6 xl:px-14 py-20 flex flex-col">
+<section id="faq" class="bg-beige h-auto w-screen p-6 xl:px-14 py-20 flex flex-col">
     <h2 class="font-bebas text-8xl xl:text-9xl text-brown my-4">FAQ</h2>
 
     <FAQ title="GENERAL" items={faqInfo} />
     <div class="pt-18"></div>
     <FAQ title="HACK CLUB" items={faqGeneral} />
 
-    <div class="font-bebas text-2xl text-darl-gray mt-auto">
+    <div class="font-bebas text-2xl text-darl-gray mt-30">
         <span>Still have questions? <br />email me at <span class="bg-green text-red px-2 rounded-xs">sophia [@] hackclub.com</span></span>
     </div>
 </section>
-<!-- <section class="bg-dark-gray min-h-300 w-screen p-6 xl:px-14 py-14 xl:pt-24 text-gray">
-    <h3 class="font-bebas text-7xl xl:text-9xl">WHO'S BEHIND THIS?</h3>
-    <div class="flex gap-10 xl:gap-60 h-full">
-        <div class="w-full xl:w-1/3 space-y-4 flex flex-col trig h-fit">
-            <p>hey i’m sophia! i’m an 18-year-old from ottawa, canada who recently moved to vermont to work at hack club, a 501c(3) non profit. i'm a believer that teens can do anything if given the opportunity! if you join i’m sure we’ll chat!
+<section class="min-h-240 w-screen p-6 xl:px-14 py-14 xl:pt-24 text-gray flex flex-col gap-14">
+
+    <p class="text-red mx-auto font-mono text-3xl tracking-wide">[ WHO'S BEHIND THIS ] </p>
+    <!-- <h3 class="font-bebas text-7xl xl:text-9xl">WHO'S BEHIND THIS?</h3> -->
+    <div class="flex flex-col lg:flex-row gap-10 xl:gap-60 h-full grow relative">
+        <div class="bg-[url('/decor.svg')] bg-center bg-contain bg-no-repeat absolute inset-0 h-140 w-full"></div>
+        <div class="parallax w-full xl:w-1/3 space-y-4 flex flex-col trig h-full">
+            <div class="w-full sm:w-100 h-80 bg-gray rounded-xs overflow-hidden">
+                <!-- <img src="/sophia.png" alt="sophia" class="h-full w-auto object-cover opacity-100 parallax"/> -->
+            </div>
+            <p class="text-dark-gray max-w-lg">hey i’m sophia! i’m an 18-year-old from ottawa, canada who recently moved to vermont to work at hack club, a 501c(3) non profit. i'm a believer that teens can do anything if given the opportunity! if you join i’m sure we’ll chat!
             </p>
-            <div class="mt-auto w-full min-w-100 h-80 bg-dark-gray rounded-xs overflow-hidden">
-                <img src="/sophia.png" alt="sophia" class="h-full w-auto object-cover opacity-100 parallax"/>
+        </div>
+        <div class="parallax grow mt-auto space-y-4">
+            <p class="text-dark-gray text-right max-w-lg lg:max-w-2xl ml-auto mt-4 ">hack club is a non-profit working to empower high school students to learn coding and engineering by building real-world technical projects. we are built by teenagers, for teenagers.</p>
+            <div class="ml-auto w-full sm:w-140 h-90 bg-gray rounded-xs pt-6 overflow-hidden">
+                <!-- <img src="/hackclubbers.png" alt="hackclubbers" class="h-full w-full object-cover opacity-100 parallax"/> -->
             </div>
 
         </div>
-        <div class="grow space-y-4">
-            <div class="w-full h-fit rounded-xs pt-6 overflow-hidden">
-                <img src="/hackclubbers.png" alt="hackclubbers" class="h-full w-full object-cover opacity-100 parallax"/>
-            </div>
-            <p class="text-right max-w-2xl ml-auto mt-4">hack club is a non-profit working to empower high school students to learn coding and engineering by building real-world technical projects. we are built by teenagers, for teenagers.</p>
-        </div>
     </div>
-</section> -->
+</section>
 <section>
-<Footer />
+    <div class="z-200">
+        <Footer />
+
+    </div>
 
 </section>

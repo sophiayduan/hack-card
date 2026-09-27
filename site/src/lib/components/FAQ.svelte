@@ -48,19 +48,18 @@
 </script>
 
 <hr />
-   <div class="flex">
-       <div class="w-full py-4 text-xl font-semibold px-4">
+   <div class="flex gap-2">
+       <div class="w-md md:w-lg lg:w-full py-4 text-xl font-semibold px-4 whitespace-nowrap">
            {title}
        </div>
-       <div></div>
        <div class="w-full">
            {#each items as item, index}
            <div class="w-full py-2 text-lg xl:text-xl leading-tight font-semibold px-4 border-b border-brown font-mono flex flex-col transition-all duration-300">
-               <button onclick={() => toggle(index)} class="flex items-center xl:justify-between cursor-pointer">
-                   <span class="text-left py-2 xl:py-4 w-fit">{item.question}</span>
+               <button onclick={() => toggle(index)} class="flex items-center justify-between gap-4 cursor-pointer">
+                   <span class="text-left py-2 xl:py-4">{item.question}</span>
                    <svg
-                       width="23"
-                       height="23"
+                       width="20"
+                       height="20"
                        viewBox="0 0 31 31"
                        fill="none"
                        xmlns="http://www.w3.org/2000/svg"
