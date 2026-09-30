@@ -3,17 +3,24 @@
     import Scene from '$lib/components/Scene.svelte'
     import Navbar from '$lib/components/Navbar.svelte'
     import CursorFollower from '$lib/components/CursorFollower.svelte'
-    import { gsap } from 'gsap'
+    // import { gsap } from 'gsap'
 
     import { onMount, onDestroy } from 'svelte';
-    import { ScrollTrigger } from 'gsap/ScrollTrigger'
+    // import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 
-    let tween: gsap.core.Tween
+    let gsap: typeof import('gsap').gsap;
+    let ScrollTrigger: typeof import('gsap/ScrollTrigger').ScrollTrigger;
+    let tween: import('gsap').gsap.core.Tween | undefined;
 
 
 
-    onMount(() => {
+    onMount(async() => {
+      const gsapModule = await import('gsap');
+      const scrollTriggerModule = await import('gsap/ScrollTrigger');
+
+      gsap = gsapModule.gsap;
+      ScrollTrigger = scrollTriggerModule.ScrollTrigger;
       gsap.registerPlugin(ScrollTrigger)
 
       const coords = document.getElementById('coords');

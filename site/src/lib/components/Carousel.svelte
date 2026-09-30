@@ -2,8 +2,7 @@
     import { onMount } from 'svelte';
     let slideIndex = $state(0);
     let progressBars: HTMLDivElement[] = [];
-    import gsap from 'gsap';
-
+    let gsap = $state<typeof import('gsap').gsap>();
 
     function nextSlide() {
       slideIndex += 1;
@@ -19,8 +18,11 @@
         slideIndex = images.length - 1;
       }
     }
-
+    onMount(async () => {
+          ({ gsap } = await import('gsap'));
+    })
     onMount(() => {
+
       const timer = setInterval(nextSlide, 4000);
 
       return () => clearInterval(timer);
