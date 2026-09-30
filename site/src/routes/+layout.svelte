@@ -8,6 +8,7 @@
 	let { children } = $props();
 
 	let overlay: HTMLDivElement;
+	export const ssr = false;
 
 	onMount(() => {
      	gsap.set(overlay, {
