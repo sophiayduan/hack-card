@@ -3,6 +3,8 @@
     let slideIndex = $state(0);
     let progressBars: HTMLDivElement[] = [];
     import gsap from 'gsap';
+
+
     function nextSlide() {
       slideIndex += 1;
       if (slideIndex >= images.length) {
