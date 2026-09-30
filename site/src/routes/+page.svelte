@@ -295,7 +295,6 @@
         </form>
         <div class="mt-auto space-y-6">
             <h4 class="text-xl font-mono my-1">CATEGORIES:</h4>
-            <CursorFollower text="READ MORE" class="w-fit">
                 <ol class="hover:cursor-pointer font-mono text-xl leading-tight w-fit whitespace-nowrap">
                     <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">01) OVERALL PICKS</li>
                     <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">02) BEST BEGINNER PCB</li>
@@ -305,7 +304,6 @@
                     <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">06) COMMUNITY PICK</li>
 
                 </ol>
-            </CursorFollower>
             <!-- <h3 class="text-3xl xl:text-5xl text-brown max-w-2xl font-semibold">For teens 13-18. <br /> Begins September 10th.</h3> -->
         </div>
     </div>
