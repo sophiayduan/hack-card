@@ -3,97 +3,19 @@
     import Scene from '$lib/components/Scene.svelte'
     import Navbar from '$lib/components/Navbar.svelte'
     import CursorFollower from '$lib/components/CursorFollower.svelte'
-
-    import Carousel from '$lib/components/Carousel.svelte'
+    import { gsap } from 'gsap'
 
     import { onMount, onDestroy } from 'svelte';
-    import { gsap } from 'gsap'
     import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-    gsap.registerPlugin(ScrollTrigger)
 
     let tween: gsap.core.Tween
 
-    const examples = $state([
-      { id: 1, children: 'h-50', src: ''},
-      { id: 2, children: 'h-100', src: ''},
-      { id: 3, children: 'h-70', src: ''},
-      { id: 4, children: 'h-40', src: ''},
-      { id: 5, children: 'h-30', src: ''},
-    ]);
 
-    const examples2 = $state([
-      { id: 1, children: 'h-50', src: ''},
-      { id: 2, children: 'h-80', src: ''},
-      { id: 3, children: 'h-60', src: ''},
-      { id: 4, children: 'h-40', src: ''},
-      { id: 5, children: 'h-30', src: ''},
-    ]);
-
-    const faqInfo = [
-      {
-        id: 1,
-        question: "Is this really free? What's the catch?",
-        answer: "Yes this is free, and there is no catch! The only requirement is that you're a teenager and that you submit a cool business card :)"
-      },
-      {
-        id: 2,
-        question: "Who is this for?",
-        answer: "Teenagers aged 13-18 (13/18 included) that are curious about electronics! HACK CARD rewards everyone who submits a design with project funding + the opportunity to win additional prizes. Each teen should be able to find a suitable award category to target! "
-      },
-      {
-        id: 3,
-        question: "Can I follow a tutorial?",
-        answer: "Yes and no. If you follow a tutorial, you must add an additional twist before submitting your project. We don't want to be judging tons of NFC-only cards - Make your card your own!"
-      },
-      {
-        id: 4,
-        question: "How long do I need to spend on my PCB?",
-        answer: "There is no time requirement! We really care about quality > quantity, and that is what we'll be judging."
-      },
-      {
-        id: 5,
-        question: "What if my card is bad?",
-        answer: "There are no 'bad' cards, just give it your best effort! If it's your first ever PCB, we have a 1st PCB category specifically for you!"
-      },
-      {
-        id: 6,
-        question: "How do I start learning PCB design?",
-        answer: "Resources coming soon!"
-      },
-      {
-        id: 7,
-        question: "Can I use AI?",
-        answer: "AI writting (e.g. in your GitHub repo), routing, and overall heavy reliance on AI is prohibited. Minimal use is allowed, just be cautious!"
-      },
-    ];
-
-    const faqGeneral = [
-      {
-        id: 1,
-        question: "What is Hack Club?",
-        answer: "Hack Club is the 501(c)(3) non profit behind HACK CARD! We're a global community of teens making cool projects."
-      },
-      {
-        id: 2,
-        question: "Do I need a Hack Club Account?",
-        answer: "Yup! By signing up you'll automatically receive one. To get shipped prizes, you'll need to verify your identity - this is how we check that you're actually a teenager!"
-      },
-      {
-        id: 3,
-        question: "Is this 'double dippable'?",
-        answer: "No, HACK CARD isn't double dippable. For non-Hack Clubbers, double dipping means the ability to simultaneously submit one project to two Hack Club programs."
-      },
-      {
-        id: 4,
-        question: "Do I need to track my time with Hackatime?",
-        answer: "Time tracking is not required! Although, if you choose to journal your project (read more on how to journal here), you'll earn additional HACK CARD merch."
-      },
-    ];
-
-    let nudge: gsap.core.Timeline;
 
     onMount(() => {
+      gsap.registerPlugin(ScrollTrigger)
+
       const coords = document.getElementById('coords');
       document.addEventListener('mousemove', (e) => {
         let x = e.clientX;
@@ -106,16 +28,6 @@
         }
 
       })
-
-      // nudge = gsap.timeline({
-      //   delay:2,
-      //   repeat: -1,
-      //   repeatDelay:5,
-      // })
-      // .to('.nudge', { x: 30, duration: 0.4, ease: 'none' })
-      // .to('.nudge', { x: -30, duration: 0.4, ease: 'none' })
-      // .to('.nudge', { x: 30, duration: 0.4, ease: 'none' })
-      // .to('.nudge', { x: -30, duration: 0.4, ease: 'none' });
 
       function checkCoords(i) {
         if (i < 1000) {
@@ -170,62 +82,6 @@
           }
         })
 
-        tween = gsap.from('.parallax', {
-          yPercent: 20,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '.trig',
-            start: 'top center',
-            end: '+=400',
-            scrub: true,
-            // markers: true
-          }
-        })
-
-        gsap.fromTo('.scroll2', {
-          x:-200,
-          opacity:1,
-        },
-        {
-          x:100,
-          duration:2,
-          scrollTrigger: {
-            trigger: "#gallery",
-            start: 'top top',
-            end: '+=400',
-            scrub: 2,
-            // markers: true
-
-          }
-        })
-
-        gsap.fromTo('.scroll', {
-          x:100,
-          opacity:1,
-        },
-        {
-          x:-200,
-          duration:2,
-          scrollTrigger: {
-            trigger: "#gallery",
-            start: 'top top',
-            end: '+=400',
-            scrub: 2,
-            // markers: true
-
-          }
-        })
-
-        gsap.to('.banner', {
-          x:120,
-          scrollTrigger: {
-            trigger: "#banner",
-            start: 'center bottom',
-            end:'+=600',
-            scrub:1,
-            // markers: true,
-          }
-        })
 
 
     });
@@ -241,13 +97,8 @@
 <section id="hero" class="w-screen min-h-screen xl:h-screen px-6 py-10 bg-beige xl:p-14 grid grid-cols-1 grid-rows-1 bg-local overflow-hidden place-items-center">
     <div class="z-100 absolute top-1/2 -translate-y-1/2 right-0 w-12 h-40 hover:w-14 mix-blend-multiply"
 >
-        <a href="/custom" target="" class="nudge absolute inset-0 duration-300 bg-red text-red rounded-l-xs"
-            onmouseenter={() => nudge?.pause()}
-            onmouseleave={() => nudge?.play()}
-            onfocus={() => nudge?.pause()}
-            onblur={() => nudge?.play()}
-        >
-        </a>
+        <div class=" absolute inset-0 duration-300 bg-red text-red rounded-l-xs">
+        </div>
     </div>
 
     <div class="col-start-1 row-start-1 grid grid-cols-1 grid-rows-1 h-180 w-180 xl:h-full xl:w-auto aspect-square ml-auto xl:pr-20 place-items-center z-100">
