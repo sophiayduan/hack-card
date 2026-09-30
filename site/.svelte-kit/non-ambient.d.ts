@@ -29,17 +29,15 @@ declare module "$app/types" {
 	type MatcherParam<M> = M extends (param : string) => param is (infer U extends string) ? U : string;
 
 	export interface AppTypes {
-		RouteId(): "/" | "/custom" | "/test";
+		RouteId(): "/";
 		RouteParams(): {
 			
 		};
 		LayoutParams(): {
-			"/": Record<string, never>;
-			"/custom": Record<string, never>;
-			"/test": Record<string, never>
+			"/": Record<string, never>
 		};
-		Pathname(): "/" | "/custom" | "/test";
+		Pathname(): "/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/arrow.svg" | "/bg-circles.svg" | "/decor.svg" | "/hack-card.svg" | "/hackclubbers.png" | "/hc-bg.svg" | "/logo-red.svg" | "/logo.svg" | "/models/card-example-2.glb" | "/models/card-example-3.glb" | "/models/card-example-4.glb" | "/models/card-example.glb" | "/models/rudy_bcard.glb" | "/robots.txt" | "/sophia.png" | string & {};
+		Asset(): "/arrow.svg" | "/bg-circles.svg" | "/decor.svg" | "/hack-card.svg" | "/hackclubbers.png" | "/hc-bg.svg" | "/logo-red.svg" | "/logo.svg" | "/models/card-example-2.glb" | "/models/card-example-3.glb" | "/models/card-example-4.glb" | "/models/card-example.glb" | "/models/rudy_bcard.glb" | "/robots.txt" | "/sophia.png" | "/sophia1.png" | "/teampng.png" | string & {};
 	}
 }

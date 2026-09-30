@@ -2,9 +2,6 @@
     import { Canvas } from '@threlte/core'
     import Scene from '$lib/components/Scene.svelte'
     import Navbar from '$lib/components/Navbar.svelte'
-    import Footer from '$lib/components/Footer.svelte'
-    import FAQ from '$lib/components/FAQ.svelte'
-    import Rings from '$lib/components/Rings.svelte'
     import CursorFollower from '$lib/components/CursorFollower.svelte'
 
     import Carousel from '$lib/components/Carousel.svelte'
@@ -248,7 +245,8 @@
             onmouseenter={() => nudge?.pause()}
             onmouseleave={() => nudge?.play()}
             onfocus={() => nudge?.pause()}
-            onblur={() => nudge?.play()}>
+            onblur={() => nudge?.play()}
+        >
         </a>
     </div>
 
@@ -340,7 +338,7 @@
     </div>
 
 </section>
-<section class="trigger bg-beige min-h-200 w-screen p-6 xl:px-14 py-20 flex flex-col">
+<!-- <section class="trigger bg-beige min-h-200 w-screen p-6 xl:px-14 py-20 flex flex-col">
     <h3 class="text-[1.8rem] xl:text-[2rem] font-semibold pb-6">Welcome to Canada's biggest hackathon</h3>
     <div class="flex flex-col lg:flex-row justify-between items-start grow gap-20">
         <div class="w-full lg:max-w-2xl xl:max-w-3xl">
@@ -352,14 +350,14 @@
         <CursorFollower class="" text="NEXT">
             <div class="h-80 w-140 bg-gray rounded-xs border border-brown flex flex-col justify-between items-center relative">
                 <Carousel />
-                <!-- <div class="absolute inset-0">
+                <div class="absolute inset-0">
                     <span class="-translate-y-1/2">|</span>
                     <div class="w-full flex justify-between items-start">
                         <span class="-translate-x-1/2 rotate-90">|</span>
                         <span class="translate-x-1/2 rotate-90">|</span>
                     </div>
                     <span class="translate-y-1/2">|</span>
-                </div> -->
+                </div>
 
             </div>
         </CursorFollower>
@@ -377,8 +375,8 @@
           </ol>
         </div>
     </div>
-</section>
-<section class="about bg-gray w-screen p-6 xl:px-14 py-20 flex flex-col">
+</section> -->
+<!-- <section class="about bg-gray w-screen p-6 xl:px-14 py-20 flex flex-col">
     <h3 class="text-8xl xl:text-9xl  text-beige max-w-2xl font-bebas">
         HOW IT WORKS
     </h3>
@@ -438,7 +436,7 @@
         </div>
     </div>
 
-</section>
+</section> -->
 <!-- <section id="gallery" class="bg-brown w-screen flex flex-col gap-6 py-14 xl:py-20 overflow-hidden">
     <h3 class="text-[2rem] leading-9 text-beige font-medium mx-6 xl:mx-14 ">Insert COPY HERE A printed circuit board design <br/> competition with prizes for teens <br/> of <span class="underline text-blue-700 font-medium whitespace-nowrap">all skill levels</span>competition with prizes for teens.</h3>
     <a href="/" class="bg-green rounded-xs text-red font-bebas text-2xl px-2 pt-1 flex w-fit items-center gap-2 h-fit mx-6 xl:mx-14 ">
@@ -459,7 +457,7 @@
         </ul>
     </div>
 </section> -->
-<section id="awards" class="bg-brown p-4 lg:p-6 py-20 xl:py-30 w-auto flex items-center justify-center">
+<!-- <section id="awards" class="bg-brown p-4 lg:p-6 py-20 xl:py-30 w-auto flex items-center justify-center">
     <div class="w-full h-screen rounded-xs m-4 grid grid-cols-1 grid-rows-1 bg-green place-items-center overflow-hidden">
         <div class="col-start-1 row-start-1 w-full h-full flex flex-col p-8">
             <div class="">
@@ -496,11 +494,11 @@
         </div>
     </div>
 
-</section>
-<div id="banner" class="w-full h-8 bg-red flex items-center justify-center font-mono text-beige whitespace-nowrap overflow-hidden">
+</section> -->
+<!-- <div id="banner" class="w-full h-8 bg-red flex items-center justify-center font-mono text-beige whitespace-nowrap overflow-hidden">
     <p class="banner">FREE PROJECT FUNDING & STICKERS FOR ALL - FREE PROJECT FUNDING & STICKERS FOR ALL - FREE PROJECT FUNDING & STICKERS FOR ALL - FREE PROJECT FUNDING & STICKERS FOR ALL - FREE PROJECT FUNDING & STICKERS FOR ALL - </p>
-</div>
-<section id="faq" class="bg-beige h-auto w-screen p-6 xl:px-14 py-20 flex flex-col">
+</div> -->
+<!-- <section id="faq" class="bg-beige h-auto w-screen p-6 xl:px-14 py-20 flex flex-col">
     <h2 class="font-bebas text-8xl xl:text-9xl text-brown my-4">FAQ</h2>
 
     <FAQ title="GENERAL" items={faqInfo} />
@@ -510,11 +508,10 @@
     <div class="font-bebas text-2xl text-darl-gray mt-30">
         <span>Still have questions? <br />email me at <span class="bg-green text-red px-2 rounded-xs">sophia [@] hackclub.com</span></span>
     </div>
-</section>
-<section id="#who" class="min-h-240 w-screen p-6 xl:px-14 py-14 xl:pt-24 text-gray flex flex-col gap-14">
+</section> -->
+<!-- <section id="#who" class="min-h-240 w-screen p-6 xl:px-14 py-14 xl:pt-24 text-gray flex flex-col gap-14">
 
     <p class="text-red mx-auto font-mono text-3xl tracking-wide">[ WHO'S BEHIND THIS ] </p>
-    <!-- <h3 class="font-bebas text-7xl xl:text-9xl">WHO'S BEHIND THIS?</h3> -->
     <div class="flex flex-col lg:flex-row gap-10 xl:gap-60 h-full grow relative">
         <div class="bg-[url('/decor.svg')] bg-center bg-contain bg-no-repeat absolute inset-0 h-140 w-full"></div>
         <div class="parallax w-full xl:w-1/3 space-y-4 flex flex-col trig h-full">
@@ -537,6 +534,6 @@
     <div class="z-200">
         <Footer />
 
-    </div>
+    </div> -->
 
-</section>
+<!-- </section> -->

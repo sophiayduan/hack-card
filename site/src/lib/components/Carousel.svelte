@@ -24,7 +24,7 @@
       const timer = setInterval(nextSlide, 4000);
 
       return () => clearInterval(timer);
-    })
+
     $effect(() => {
       const activeBar = progressBars[slideIndex];
 
@@ -41,7 +41,7 @@
       });
 
     })
-
+    })
     export const images = [
       {
         alt: '1',

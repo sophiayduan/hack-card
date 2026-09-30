@@ -7,39 +7,38 @@
 
 	let { children } = $props();
 
-	let overlay: HTMLDivElement;
-	export const ssr = false;
 
-	onMount(() => {
-     	gsap.set(overlay, {
-     	    yPercent: 0,
-      		ease: 'power4.in',
-      		duration: 1,
-     	});
-
-        return async () => {
-          await gsap.to(overlay, {
-            yPercent: -100,
-            duration: 0.6,
-          })
-        }
-        onNavigate(async () => {
-     	  await gsap.to(overlay, {
-      		    yPercent:0,
-     			ease: 'power4.inOut',
-     			duration: 1
-      		})
-     	});
-
-     	afterNavigate(async () => {
-     	  await gsap.to(overlay, {
-     			yPercent: -100,
-     			ease: 'power4.inOut',
-     			duration: 1
-     			})
-     	})
-	})
-
+// 	onMount(() => {
+// 	    let overlay: HTMLDivElement;
+//
+//      	gsap.set(overlay, {
+//      	    yPercent: 0,
+//       		ease: 'power4.in',
+//       		duration: 1,
+//      	});
+//
+//         return async () => {
+//           await gsap.to(overlay, {
+//             yPercent: -100,
+//             duration: 0.6,
+//           })
+//         }
+//         onNavigate(async () => {
+//      	  await gsap.to(overlay, {
+//       		    yPercent:0,
+//      			ease: 'power4.inOut',
+//      			duration: 1
+//       		})
+//      	});
+//
+//      	afterNavigate(async () => {
+//      	  await gsap.to(overlay, {
+//      			yPercent: -100,
+//      			ease: 'power4.inOut',
+//      			duration: 1
+//      			})
+//      	})
+// 	})
 
 </script>
 
