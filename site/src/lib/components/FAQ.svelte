@@ -1,12 +1,15 @@
 <script lang="ts">
     import { gsap } from 'gsap';
-
+    import { onMount } from 'svelte';
     type FaqItem = { id: number; question: string; answer: string };
 
     let { title, items }: { title: string; items: FaqItem[] } = $props();
 
     let openIndex = $state<number | null>(null)
     let answers: HTMLDivElement[] = $state([])
+    onMount (() => {
+
+
     async function toggle(index: number) {
       const isOpening = openIndex !== index;
       const el = answers[index];
@@ -45,6 +48,7 @@
         openIndex = null;
       }
     }
+        });
 </script>
 
 <hr />
