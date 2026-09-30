@@ -47,7 +47,6 @@
 </svelte:head>
 
 <div bind:this={overlay} class="overlay fixed top-0 left-0 w-screen h-screen z-1000 bg-brown pointer-events-none grid grid-cols-1 grid-rows-1 place-items-center">
-    <!-- <div class="col-start-1 row-start-1 w-full bg-red"></div> -->
     <img src="/logo-red.svg" alt="HACK CARD" class="h-30" />
 </div>
 {@render children()}

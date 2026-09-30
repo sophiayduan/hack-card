@@ -5,6 +5,9 @@
     import Footer from '$lib/components/Footer.svelte'
     import FAQ from '$lib/components/FAQ.svelte'
     import Rings from '$lib/components/Rings.svelte'
+    import CursorFollower from '$lib/components/CursorFollower.svelte'
+
+    import Carousel from '$lib/components/Carousel.svelte'
 
     import { onMount, onDestroy } from 'svelte';
     import { gsap } from 'gsap'
@@ -34,37 +37,37 @@
       {
         id: 1,
         question: "Is this really free? What's the catch?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "Yes this is free, and there is no catch! The only requirement is that you're a teenager and that you submit a cool business card :)"
       },
       {
         id: 2,
         question: "Who is this for?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "Teenagers aged 13-18 (13/18 included) that are curious about electronics! HACK CARD rewards everyone who submits a design with project funding + the opportunity to win additional prizes. Each teen should be able to find a suitable award category to target! "
       },
       {
         id: 3,
         question: "Can I follow a tutorial?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "Yes and no. If you follow a tutorial, you must add an additional twist before submitting your project. We don't want to be judging tons of NFC-only cards - Make your card your own!"
       },
       {
         id: 4,
         question: "How long do I need to spend on my PCB?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "There is no time requirement! We really care about quality > quantity, and that is what we'll be judging."
       },
       {
         id: 5,
         question: "What if my card is bad?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "There are no 'bad' cards, just give it your best effort! If it's your first ever PCB, we have a 1st PCB category specifically for you!"
       },
       {
         id: 6,
         question: "How do I start learning PCB design?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "Resources coming soon!"
       },
       {
         id: 7,
         question: "Can I use AI?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "AI writting (e.g. in your GitHub repo), routing, and overall heavy reliance on AI is prohibited. Minimal use is allowed, just be cautious!"
       },
     ];
 
@@ -72,22 +75,22 @@
       {
         id: 1,
         question: "What is Hack Club?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "Hack Club is the 501(c)(3) non profit behind HACK CARD! We're a global community of teens making cool projects."
       },
       {
         id: 2,
         question: "Do I need a Hack Club Account?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "Yup! By signing up you'll automatically receive one. To get shipped prizes, you'll need to verify your identity - this is how we check that you're actually a teenager!"
       },
       {
         id: 3,
         question: "Is this 'double dippable'?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "No, HACK CARD isn't double dippable. For non-Hack Clubbers, double dipping means the ability to simultaneously submit one project to two Hack Club programs."
       },
       {
         id: 4,
         question: "Do I need to track my time with Hackatime?",
-        answer: "Nah bro ainfdklmaldskmfaldsfmsaldf how are u the quick brown fox jumps over the lazy the dogs. How are you doing, wow."
+        answer: "Time tracking is not required! Although, if you choose to journal your project (read more on how to journal here), you'll earn additional HACK CARD merch."
       },
     ];
 
@@ -157,12 +160,15 @@
       liveClock();
         tween = gsap.from('.about', {
           yPercent: 20,
-          ease: 'none',
+          ease: 'power1.out',
+          // duration:0.6,
           scrollTrigger: {
             trigger: ".trigger",
             start: 'top center',
             end: '+=500',
-            scrub: true,
+            // onEnter onLeave onEnterBack onLeaveBack
+            toggleActions: 'play none reverse none',
+            scrub: 2,
             // markers: true
           }
         })
@@ -235,7 +241,6 @@
 
 
 <!-- <div class="fixed inset-0 bg-[url('../lib/assets/noise.gif')] opacity-12 pointer-events-none"></div> -->
-
 <section id="hero" class="w-screen min-h-screen xl:h-screen px-6 py-10 bg-beige xl:p-14 grid grid-cols-1 grid-rows-1 bg-local overflow-hidden place-items-center">
     <div class="z-100 absolute top-1/2 -translate-y-1/2 right-0 w-12 h-40 hover:w-14 mix-blend-multiply"
 >
@@ -244,21 +249,20 @@
             onmouseleave={() => nudge?.play()}
             onfocus={() => nudge?.pause()}
             onblur={() => nudge?.play()}>
-
-            s
         </a>
     </div>
 
     <div class="col-start-1 row-start-1 grid grid-cols-1 grid-rows-1 h-180 w-180 xl:h-full xl:w-auto aspect-square ml-auto xl:pr-20 place-items-center z-100">
-        <div class="col-start-1 row-start-1 relative h-full w-full pointer-events-none pb-20">
+        <div class="col-start-1 row-start-1 relative h-full w-full pointer-events-none">
+            <img src="/bg-circles.svg" alt="" class="absolute inset-0 h-full object-contain scale-130 left-8" />
             <!-- <Canvas>
                 <Rings />
             </Canvas> -->
         </div>
         <div class="col-start-1 row-start-1 relative h-full w-[80%] z-0 mt-10">
-            <!-- <Canvas>
+            <Canvas>
                 <Scene />
-            </Canvas> -->
+            </Canvas>
         </div>
 
         <div class="col-start-1 row-start-1 w-full h-full flex items-center justify-center font-mono font-bold ">
@@ -289,15 +293,19 @@
                 </button>
             </div>
         </form>
-        <div class="trigger mt-auto space-y-6">
+        <div class="mt-auto space-y-6">
             <h4 class="text-xl font-mono my-1">CATEGORIES:</h4>
-            <ol class="font-mono text-xl leading-tight w-fit whitespace-nowrap">
-                <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">01) OVERALL PICK</li>
-                <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">02) BEST BEGINNER PCB</li>
-                <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">03) MOST ARTISTIC</li>
-                <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full pr-4">04) MOST NON-BUSINESS CARD LIKE</li>
-                <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">05) MOST TECHNICAL</li>
-            </ol>
+            <CursorFollower text="READ MORE" class="w-fit">
+                <ol class="hover:cursor-pointer font-mono text-xl leading-tight w-fit whitespace-nowrap">
+                    <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">01) OVERALL PICKS</li>
+                    <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">02) BEST BEGINNER PCB</li>
+                    <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">03) MOST ARTISTIC</li>
+                    <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full pr-4">04) MOST NON-BUSINESS CARD LIKE</li>
+                    <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">05) MOST FUNCTIONAL</li>
+                    <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">06) COMMUNITY PICK</li>
+
+                </ol>
+            </CursorFollower>
             <!-- <h3 class="text-3xl xl:text-5xl text-brown max-w-2xl font-semibold">For teens 13-18. <br /> Begins September 10th.</h3> -->
         </div>
     </div>
@@ -320,46 +328,52 @@
             <span id="clock"></span>
             <span class="text-gray"> /24H</span>
         </div>
-        <span class="text-right">BY SOPHIA DUAN<br /> & FRIENDS</span>
+        <span class="text-right">BY SOPHIA DUAN</span>
     </div>
     <div class="fixed bottom-2 text-sm lg:text-base xl:bottom-4 left-0 px-8 xl:px-16 w-full h-fit font-mono text-brown font-light ml-auto gap-14 mix-blend-multiply pointer-events-none grid grid-cols-3">
         <div></div>
-        <span id="coords" class="place-self-center">X 0000 | Y 0000 </span>
+        <span id="coords" class="mt-auto place-self-center">X 0000 | Y 0000 </span>
         <div class="flex flex-col items-end gap-2 place-self-end">
-            <!-- <img src="/logo.svg" alt="" class="mix-blend-multiply opacity-60 h-10" /> -->
+            <img src="/logo.svg" alt="" class="mix-blend-multiply opacity-100 h-12" />
             <span>&copy; 2026</span>
         </div>
     </div>
 
 </section>
-<section class="bg-beige min-h-200 w-screen p-6 xl:px-14 py-20 flex flex-col">
+<section class="trigger bg-beige min-h-200 w-screen p-6 xl:px-14 py-20 flex flex-col">
     <h3 class="text-[1.8rem] xl:text-[2rem] font-semibold pb-6">Welcome to Canada's biggest hackathon</h3>
-    <div class="flex justify-between items-start grow gap-20">
-        <div class="max-w-2xl">
-            <p class="font-mono text-lg">This September, join 1,000+ hackers from around the world and build with people who think differently. Learn from world-class mentors, connect with the community, and turn ideas into something real. 13 years in, Hack the North continues to bring hands-on workshops, unforgettable experiences, and real connections with the companies shaping what's next in tech.</p>
+    <div class="flex flex-col lg:flex-row justify-between items-start grow gap-20">
+        <div class="w-full lg:max-w-2xl xl:max-w-3xl">
+            <p class="font-mono text-lg"><span class=" bg-red/90 px-1 rounded-xs font-semibold">From October 15th to December 12th, make a PCB business card</span> to share with others. You can design something weird, practical, beautiful, or something else completely and get it funded + trade your cards! <span class="font-semibold">Your business card should roughly be the size of a business card: 3.5" x 2", and reasonably thick. Finally, your card should do more than a common business card, it shouldn't be replacable with paper!</span></p>
             <br />
             <br />
-            <p class="mt-auto font-mono text-lg">Not from Waterloo? We cover food, help with travel expenses, and provide lodging so you can focus on turning your dreams into reality.</p>
+            <p class="mt-auto font-mono text-lg">If you've never designed a PCB before, we have <span class="underline font-semibold">learning resources</span>, and <span class="underline font-semibold">weekly calls</span> where we're ready to help! Also, feel free to ask questions or share your progress in <span class="whitespace-nowrap bg-red/90 px-1 rounded-xs font-semibold">#hack-card-ysws</span>!</p>
         </div>
-        <div class="h-full min-h-80 min-w-140 bg-gray rounded-xs border border-brown flex flex-col justify-between items-center">
-            <span class="-translate-y-1/2">|</span>
-            <div class="w-full flex justify-between items-start">
-                <span class="-translate-x-1/2 rotate-90">|</span>
-                <span class="translate-x-1/2 rotate-90">|</span>
-            </div>
+        <CursorFollower class="" text="NEXT">
+            <div class="h-80 w-140 bg-gray rounded-xs border border-brown flex flex-col justify-between items-center relative">
+                <Carousel />
+                <!-- <div class="absolute inset-0">
+                    <span class="-translate-y-1/2">|</span>
+                    <div class="w-full flex justify-between items-start">
+                        <span class="-translate-x-1/2 rotate-90">|</span>
+                        <span class="translate-x-1/2 rotate-90">|</span>
+                    </div>
+                    <span class="translate-y-1/2">|</span>
+                </div> -->
 
-            <span class="translate-y-1/2">|</span>
-        </div>
+            </div>
+        </CursorFollower>
 
     </div>
-    <div class="w-full flex justify-end mt-14">
+    <div class="w-full flex lg:justify-end mt-14">
         <div class="h-fit p-3">
           <ol class="font-mono text-base lg:text-lg leading-tight min-w-100 whitespace-nowrap">
-              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-1">01 OVERALL PICK</li>
-              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-1">02 BEST BEGINNER PCB</li>
-              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-1">03 MOST ARTISTIC</li>
-              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full pr-4 border-b border-brown py-1">04 MOST NON-BUSINESS CARD LIKE</li>
-              <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-1">05 MOST TECHNICAL</li>
+              <li class="hover:bg-[#D9D1CC] transition-all duration-700 ease-hover w-full border-b border-brown py-1 uppercase">01 - CHOOSE YOUR IDEA <span class="text-gray">// Make anything!</span></li>
+              <li class="hover:bg-[#D9D1CC] transition-all duration-700 ease-hover w-full border-b border-brown py-1 uppercase">02 - MAKE YOUR SCHEMATIC<span class="text-gray">// And pick components</span></li>
+              <li class="hover:bg-[#D9D1CC] transition-all duration-700 ease-hover w-full border-b border-brown py-1 uppercase">03 - MAKE YOUR PCB <span class="text-gray">// In a card shape!</span></li>
+              <li class="hover:bg-[#D9D1CC] transition-all duration-700 ease-hover w-full pr-4 border-b border-brown py-1 uppercase">04 - SUBMIT YOUR CARD <span class="text-gray">// lets gooo</span></li>
+              <li class="hover:bg-[#D9D1CC] transition-all duration-700 ease-hover w-full border-b border-brown py-1 uppercase">05 - VOTE ON PROJECTS<span class="text-gray">// for the com. award</span></li>
+              <li class="hover:bg-[#D9D1CC] transition-all duration-700 ease-hover w-full border-b border-brown py-1 uppercase">06 - GET PRIZES!<span class="text-gray">// and awards..??</span></li>
           </ol>
         </div>
     </div>
@@ -445,20 +459,22 @@
         </ul>
     </div>
 </section> -->
-<section id="awards" class="bg-brown p-4 lg:p-6 py-20 w-auto flex items-center justify-center">
+<section id="awards" class="bg-brown p-4 lg:p-6 py-20 xl:py-30 w-auto flex items-center justify-center">
     <div class="w-full h-screen rounded-xs m-4 grid grid-cols-1 grid-rows-1 bg-green place-items-center overflow-hidden">
         <div class="col-start-1 row-start-1 w-full h-full flex flex-col p-8">
             <div class="">
                 <h2 class="font-dirty text-8xl xl:text-9xl text-red">awaRDs</h2>
-                <p class="max-w-lg font-mono">Each project will have it's manufacturing costs funded, starting at <span class="bg-gray/80 rounded-[1px] font-bold px-1 whitespace-nowrap">$25 and up to $125</span>. You'll also be able to <span class="bg-gray/80 rounded-[1px] font-bold px-1 whitespace-nowrap">trade your extra PCBs</span> with fellow particiapnts!</p>
+                <p class="max-w-lg font-mono">Each project will have it's manufacturing costs funded, starting at <span class="bg-gray rounded-[1px] font-bold px-1 whitespace-nowrap">$25 and up to $125</span>. You'll also be able to <span class="bg-gray rounded-[1px] font-bold px-1 whitespace-nowrap">trade your extra PCBs</span> with fellow particiapnts!</p>
             </div>
             <div class="mt-auto ml-auto bg-white h-fit p-3 z-10 border border-dark-gray">
               <ol class="font-mono text-base lg:text-xl leading-tight min-w-fit whitespace-nowrap">
-                  <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-2">01 OVERALL PICK</li>
+                  <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-2">01 OVERALL PICKS</li>
                   <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-2">02 BEST BEGINNER PCB</li>
                   <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-2">03 MOST ARTISTIC</li>
                   <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full pr-4 border-b border-brown py-2">04 MOST NON-BUSINESS CARD LIKE</li>
-                  <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full py-2">05 MOST TECHNICAL</li>
+                  <li class="hover:bg-gray/60 transition-all duration-700 ease-hover w-full border-b border-brown py-2">05 MOST FUNCTIONAL</li>
+                  <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full pt-2">06 COMMUNITY PICK</li>
+
               </ol>
             </div>
         </div>
@@ -477,7 +493,6 @@
             </div>
             <div class="absolute inset-0 bg-white rounded-sm border border-brown origin-bottom rotate-30 translate-x-30 shadow-xs">
             </div>
-
         </div>
     </div>
 
@@ -496,23 +511,23 @@
         <span>Still have questions? <br />email me at <span class="bg-green text-red px-2 rounded-xs">sophia [@] hackclub.com</span></span>
     </div>
 </section>
-<section class="min-h-240 w-screen p-6 xl:px-14 py-14 xl:pt-24 text-gray flex flex-col gap-14">
+<section id="#who" class="min-h-240 w-screen p-6 xl:px-14 py-14 xl:pt-24 text-gray flex flex-col gap-14">
 
     <p class="text-red mx-auto font-mono text-3xl tracking-wide">[ WHO'S BEHIND THIS ] </p>
     <!-- <h3 class="font-bebas text-7xl xl:text-9xl">WHO'S BEHIND THIS?</h3> -->
     <div class="flex flex-col lg:flex-row gap-10 xl:gap-60 h-full grow relative">
         <div class="bg-[url('/decor.svg')] bg-center bg-contain bg-no-repeat absolute inset-0 h-140 w-full"></div>
         <div class="parallax w-full xl:w-1/3 space-y-4 flex flex-col trig h-full">
-            <div class="w-full sm:w-100 h-80 bg-gray rounded-xs overflow-hidden">
-                <!-- <img src="/sophia.png" alt="sophia" class="h-full w-auto object-cover opacity-100 parallax"/> -->
+            <div class="w-full sm:w-100 h-80 rounded-xs overflow-hidden">
+                <img src="/sophia1.png" alt="sophia" class="h-full w-auto object-cover opacity-80 grayscale"/>
             </div>
-            <p class="text-dark-gray max-w-lg">hey i’m sophia! i’m an 18-year-old from ottawa, canada who recently moved to vermont to work at hack club, a 501c(3) non profit. i'm a believer that teens can do anything if given the opportunity! if you join i’m sure we’ll chat!
+            <p class="text-dark-gray max-w-lg">hey i’m sophia! i’m an 18-year-old from ottawa, canada who recently moved to vermont to work at hack club, a 501c(3) non profit. i'm running hack card as it's a program i wished already existed. if you join <span class="text-brown bg-gray/40 rounded-xs whitespace-nowrap font-semibold px-1  backdrop-blur-xs">#hack-card-ysws</span> on slack, we'll definitely chat!
             </p>
         </div>
         <div class="parallax grow mt-auto space-y-4">
-            <p class="text-dark-gray text-right max-w-lg lg:max-w-2xl ml-auto mt-4 ">hack club is a non-profit working to empower high school students to learn coding and engineering by building real-world technical projects. we are built by teenagers, for teenagers.</p>
-            <div class="ml-auto w-full sm:w-140 h-90 bg-gray rounded-xs pt-6 overflow-hidden">
-                <!-- <img src="/hackclubbers.png" alt="hackclubbers" class="h-full w-full object-cover opacity-100 parallax"/> -->
+            <p class="text-dark-gray text-right max-w-lg ml-auto mt-4 ">hack club is a non-profit working to empower high school students to learn coding and engineering by building real-world technical projects. <span class="text-brown bg-gray/40 rounded-xs whitespace-nowrap font-semibold px-1">we are built by teenagers, for teenagers.</span></p>
+            <div class="ml-auto w-full sm:w-140 h-90 rounded-xs pt-6 overflow-hidden">
+                <img src="/teampng.png" alt="hackclubbers" class="grayscale h-full w-full object-cover opacity-80"/>
             </div>
 
         </div>
