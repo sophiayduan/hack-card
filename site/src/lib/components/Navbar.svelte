@@ -10,7 +10,7 @@
         <NavButton title="HOW IT WORKS" />
         <NavButton title="AWARDS" />
         <NavButton title="FAQ" />
-        <CursorFollower class="" text="COMING SOON">
+        <!-- <CursorFollower class="" text="COMING SOON"> -->
             <li class="flex items-center group relative perspective-[400px] h-12 whitespace-nowrap">
                 <div class="relative">
                     <div class="invisible p-2">
@@ -26,6 +26,6 @@
                     </div>
                 </div>
             </li>
-        </CursorFollower>
+        <!-- </CursorFollower> -->
     </ul>
 </nav>
