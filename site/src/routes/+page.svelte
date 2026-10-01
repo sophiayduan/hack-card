@@ -135,7 +135,7 @@
         <h3 class="text-[1.8rem] xl:text-[2rem] leading-8 xl:leading-9 text-brown font-medium max-w-xl xl:max-w-2xl">A printed circuit board design competition with prizes for teens of <span class=" text-blue-700 font-medium whitespace-nowrap">all skill levels</span>.</h3>
         <form class="form border focus:outline-1 transition-all  border-brown rounded-xs bg-white w-fit pointer-events-auto shadow-xs mt-2 xl:mt-4">
             <div class="h-14 min-w-60 md:min-w-110 rounded-sm flex p-1.5">
-                <input name="email" type="email" placeholder="johncena@hackclub.com" class="w-full px-4 focus:outline-none text-base">
+                <input name="email" type="email" placeholder="you@hackclub.com" class="w-full px-4 focus:outline-none text-base">
                 <button class="rsvp ml-auto bg-green rounded-xs border border-brown  hover:bg-red hover:text-white transition-all cursor-pointer flex items-start gap-3 p-1 group focus:bg-[#C21B1F] focus:text-white">
                     <span class="text-3xl font-bebas pt-1">RSVP</span>
                     <div class="h-fit w-fit min-h-2.5 min-w-2.5 relative overflow-hidden">
@@ -158,7 +158,6 @@
                     <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full pr-4">04) MOST NON-BUSINESS CARD LIKE</li>
                     <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">05) MOST FUNCTIONAL</li>
                     <li class="hover:ml-2 hover:bg-gray/80 transition-all duration-700 ease-hover w-full">06) COMMUNITY PICK</li>
-
                 </ol>
             <!-- <h3 class="text-3xl xl:text-5xl text-brown max-w-2xl font-semibold">For teens 13-18. <br /> Begins September 10th.</h3> -->
         </div>
