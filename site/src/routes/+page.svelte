@@ -106,7 +106,7 @@
         </div>
     </div>
 
-    <div class="col-start-1 row-start-1 grid grid-cols-1 grid-rows-1 h-180 w-full md:w-180 xl:h-full xl:w-auto sm:aspect-square sm:ml-auto xl:pr-20 place-items-center z-0 sm:z-100 ">
+    <div class="col-start-1 row-start-1 grid grid-cols-1 grid-rows-1 h-180 w-full md:w-180 xl:h-full xl:w-auto sm:aspect-square sm:ml-auto xl:pr-20 place-items-center z-0">
         <div class="col-start-1 row-start-1 relative h-full w-full pointer-events-none">
             <img src="/bg-circles.svg" alt="" class="absolute inset-0 h-full object-contain scale-150 top-10 sm:top-0 sm:scale-130 sm:left-8" />
         </div>
