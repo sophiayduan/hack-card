@@ -11,7 +11,7 @@
 
     let gsap: typeof import('gsap').gsap;
     let ScrollTrigger: typeof import('gsap/ScrollTrigger').ScrollTrigger;
-    let tween: import('gsap').gsap.core.Tween | undefined;
+    // let tween: import('gsap').gsap.core.Tween | undefined;
 
     onMount(async() => {
       const gsapModule = await import('gsap');
@@ -91,8 +91,8 @@
 
     });
     onDestroy(() => {
-      tween?.scrollTrigger?.kill();
-      tween?.kill();
+      // tween?.scrollTrigger?.kill();
+      // tween?.kill();
     });
 
 </script>
