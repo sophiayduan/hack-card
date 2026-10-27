@@ -38,6 +38,9 @@
  * The above values will be the same _even if_ different values for `ENVIRONMENT` or `PUBLIC_BASE_URL` are set at runtime, as they are statically replaced in your code with their build time values.
  */
 declare module '$env/static/private' {
+	export const AIRTABLE_BASE_ID: string;
+	export const AIRTABLE_TABLE_ID: string;
+	export const AIRTABLE_TOKEN: string;
 	export const ALLUSERSPROFILE: string;
 	export const APPDATA: string;
 	export const ChocolateyInstall: string;
@@ -51,12 +54,12 @@ declare module '$env/static/private' {
 	export const ComSpec: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_11324_1262719628: string;
-	export const EFC_11324_1592913036: string;
-	export const EFC_11324_2283032206: string;
-	export const EFC_11324_2775293581: string;
-	export const EFC_11324_3789132940: string;
-	export const EFC_11324_4126798990: string;
+	export const EFC_11608_1262719628: string;
+	export const EFC_11608_1592913036: string;
+	export const EFC_11608_2283032206: string;
+	export const EFC_11608_2775293581: string;
+	export const EFC_11608_3789132940: string;
+	export const EFC_11608_4126798990: string;
 	export const Ffmpeg: string;
 	export const FPS_BROWSER_APP_PROFILE_STRING: string;
 	export const FPS_BROWSER_USER_PROFILE_STRING: string;
@@ -212,6 +215,9 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		AIRTABLE_BASE_ID: string;
+		AIRTABLE_TABLE_ID: string;
+		AIRTABLE_TOKEN: string;
 		ALLUSERSPROFILE: string;
 		APPDATA: string;
 		ChocolateyInstall: string;
@@ -225,12 +231,12 @@ declare module '$env/dynamic/private' {
 		ComSpec: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_11324_1262719628: string;
-		EFC_11324_1592913036: string;
-		EFC_11324_2283032206: string;
-		EFC_11324_2775293581: string;
-		EFC_11324_3789132940: string;
-		EFC_11324_4126798990: string;
+		EFC_11608_1262719628: string;
+		EFC_11608_1592913036: string;
+		EFC_11608_2283032206: string;
+		EFC_11608_2775293581: string;
+		EFC_11608_3789132940: string;
+		EFC_11608_4126798990: string;
 		Ffmpeg: string;
 		FPS_BROWSER_APP_PROFILE_STRING: string;
 		FPS_BROWSER_USER_PROFILE_STRING: string;
