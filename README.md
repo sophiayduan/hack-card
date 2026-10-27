@@ -1,2 +1,2 @@
 # HACK CARD
-card.hackclub.dev
+[card.hackclub.dev](https://card.hackclub.dev/)
